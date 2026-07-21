@@ -1,0 +1,27 @@
+# 1. Criar o projeto
+npm init -y
+
+# 2. Instalar o Cypress
+npm install --save-dev cypress
+
+# 3. Verificar a instalação
+npx cypress -v
+
+# 4. Abrir a interface do Cypress ( Configurar PROJETO)
+npx cypress open
+
+# ou executar os testes em modo headless
+npx cypress run
+
+#########################################################
+Material Icon Theme
+vscode-icons
+#########################################################
+criar pasta e2e dentro cypres/
+criar arquivo login.cy.js dentro de /e2e
+criar arquivo jsconfig.json raiz externa ( https://docs.cypress.io/app/tooling/IDE-integration)
+#########################################################
+aplicação de teste será 
+https://www.saucedemo.com/
+#########################################################
+
