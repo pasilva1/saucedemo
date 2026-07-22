@@ -29,3 +29,11 @@ npx cypress run ( background )
 
 npx cypress run --browser chrome
 
+#########################################################
+Após a criação do script em package.json 
+
+executa : npm run cy:run:chrome
+
+e
+
+executa : npm run cy:open:chrome
