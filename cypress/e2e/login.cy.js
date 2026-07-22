@@ -1,40 +1,41 @@
 describe('Login', () => {
-    it('Realizar login com sucesso', () => {
-      // Arrange
-        cy.visit('https://www.saucedemo.com/')
 
-      // Act
-        cy.get('[data-test="username"]').type('standard_user')
-      
-        cy.get('[data-test="password"]').type('secret_sauce')
+  beforeEach(() => {
+    // Arrange
+    cy.visit('https://www.saucedemo.com/')
+  })
 
-        cy.get('[data-test="login-button"]').click()
+  it('Realizar login com sucesso', () => {
+    // Act
+    cy.get('[data-test="username"]').type('standard_user')
 
-        cy.screenshot('login')
+    cy.get('[data-test=password]').type('secret_sauce')
 
-       // Assert
-        //cy.url().should('include', '/inventory.html')
-        cy.url().should('eq', 'https://www.saucedemo.com/inventory.html')
-    })
+    cy.get('[data-test="login-button"]').click()
 
-    it.only('Realizar login informando credenciais inválidas', () => {
-      // Arrange
-        cy.visit('https://www.saucedemo.com/')
+    // Assert
+    cy.url().should('eq', 'https://www.saucedemo.com/inventory.html')
 
-      // Act
-        cy.get('[data-test="username"]').type('user.invalid')
-      
-        cy.get('[data-test="password"]').type('senha')
+    cy.screenshot('login')
+  })
 
-        cy.get('[data-test="login-button"]').click()  
+  it('Realizar login informando credenciais inválidas', () => {
+    // Act
+    cy.get('[data-test="username"]').type('user.invalid')
 
-        cy.screenshot('erro de credenciais invalidas')
-       // Assert
-       
-        cy.get('[data-test="error"]').should(
-            'contain.text',
-            'Epic sadface: Username and password do not match any user in this service')
-        cy.url().should('eq', 'https://www.saucedemo.com/')    
-    })
+    cy.get('[data-test=password]').type('senha')
+
+    cy.get('[data-test="login-button"]').click()
+
+    // Assert
+    cy.get('[data-test="error"]')
+      .should(
+        'contain.text',
+        'Username and password do not match any user in this service'
+      )
+
+    cy.url().should('eq', 'https://www.saucedemo.com/')
+
+    cy.screenshot('erro credenciais inválidas')
+  })
 })
-  
