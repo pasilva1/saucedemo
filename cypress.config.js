@@ -1,7 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  //allowCypressEnv: false,
+ reporter: 'cypress-multi-reporters',
   chromeWebSecurity: false,
 
   e2e: {

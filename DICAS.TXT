@@ -38,3 +38,16 @@ executa : npm run cy:run:chrome
 comando para instalar report
 
 npm i -D cypress-mochawesome-reporter cypress-multi-reporters mocha-junit-reporter
+
+#########################################################
+
+na pasta cypres/e2e/support/e2e.js
+
+import 'cypress-mochawesome-reporter/register';
+
+#########################################################
+
+no arquivo cypress.config.js
+adicionar
+
+reporter: 'cypress-multi-reporters'
