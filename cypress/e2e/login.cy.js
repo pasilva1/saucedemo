@@ -28,7 +28,7 @@ describe('Login', () => {
 
         cy.get('[data-test="login-button"]').click()  
 
-        cy.screenshot('login-erro')
+        cy.screenshot('erro de credenciais invalidas')
        // Assert
        
         cy.get('[data-test="error"]').should(

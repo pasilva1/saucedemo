@@ -34,6 +34,7 @@ Após a criação do script em package.json
 
 executa : npm run cy:run:chrome
 
-e
 
-executa : npm run cy:open:chrome
+comando para instalar report
+
+npm i -D cypress-mochawesome-reporter cypress-multi-reporters mocha-junit-reporter
