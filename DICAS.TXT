@@ -25,3 +25,7 @@ aplicação de teste será
 https://www.saucedemo.com/
 #########################################################
 
+npx cypress run ( background )
+
+npx cypress run --browser chrome
+
