@@ -10,6 +10,8 @@ describe('Login', () => {
 
         cy.get('[data-test="login-button"]').click()
 
+        cy.screenshot('login')
+
        // Assert
         //cy.url().should('include', '/inventory.html')
         cy.url().should('eq', 'https://www.saucedemo.com/inventory.html')
@@ -25,6 +27,8 @@ describe('Login', () => {
         cy.get('[data-test="password"]').type('senha')
 
         cy.get('[data-test="login-button"]').click()  
+
+        cy.screenshot('login-erro')
        // Assert
        
         cy.get('[data-test="error"]').should(
